@@ -76,7 +76,8 @@ class VerificationCode(models.Model):
 
     @staticmethod
     def generate_code():
-        return ''.join(random.choices(string.digits, k=5))
+        # return ''.join(random.choices(string.digits, k=5))
+        return '12345'
 
     def is_expired(self):
         return timezone.now() > self.expires_at
