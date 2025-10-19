@@ -11,8 +11,9 @@ services:
   web:
     build: .
     command: >
-      sh -c "python manage.py collectstatic --noinput &&
-             daphne -b 0.0.0.0 -p 8000 ai_interview.asgi:application"
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             gunicorn -b 0.0.0.0 -p 8000 config.wsgi:application"
     volumes:
       - .:/app
       - static_volume:/vol/static
