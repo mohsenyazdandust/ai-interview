@@ -193,6 +193,7 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.2",
     
     'SERVERS': [
+        {'url': 'https://themohsen.pythonanywhere.com', 'description': 'Testing Production server'},
         {'url': 'http://192.168.150.50', 'description': 'Local Production server'},
         {'url': 'http://127.0.0.1:8000', 'description': 'Local development server'},
     ],
